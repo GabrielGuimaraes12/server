@@ -1,20 +1,26 @@
-const express = require('express')
-const cors = require('cors')
-const bobyParser = require('boby-parser')
-const cookieParser = require('cookie-parser')
+import express from 'express'
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import cookieParser from 'cookie-parser'
+import path from 'path'
+
 // Controllers
-const Logar = require('./Controllers/Users/Logar')
-const Logado = require('./Controllers/Users/Logado')
-const Deslogar = require('./Controllers/Users/Deslogar.js')
+import Logar from './Controllers/Users/Logar.js'
+import Logado from './Controllers/Users/Logado.js'
+import Deslogar from './Controllers/Users/Deslogar.js'
+
+//database
+import Database from './Database/index.js'
+
+
 //APP
 const app =express()
 app.use(cors())
-app.use(bobyParser.json())
+app.use(bodyParser.json())
 app.use(cookieParser())
-app.use('/Pages', express.static(__dirname+'/pages'))
+app.use('/Pages', express.static(path.dirname + '/pages'))
 
-//database
-const Database = require('./Database')
+
 
 //pages
 app.get('/', (req, res) => res.sendFile(__dirname+'/Pages/Index/Index.html'))

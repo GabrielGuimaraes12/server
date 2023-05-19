@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+import mongoose from 'mongoose'
 
 const uri = 'mongodb+srv://guimatw2012:srYJ1WXnLX6y9Plk@loginviasat.dw1nem7.mongodb.net/';
 
@@ -10,7 +10,7 @@ const options = {
 
 async function connectToDatabase() {
   try {
-    const client = new MongoClient(uri, options);
+    const client = new mongoose.MongoClient(uri, options);
     await client.connect();
     console.log('Conectado ao MongoDB Atlas');
     // Aqui você pode realizar operações no banco de dados
@@ -18,3 +18,5 @@ async function connectToDatabase() {
     console.error('Erro ao conectar ao MongoDB Atlas:', error);
   }
 }
+
+export default connectToDatabase

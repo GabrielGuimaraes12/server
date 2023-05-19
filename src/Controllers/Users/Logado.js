@@ -1,4 +1,4 @@
-const jsonwebtoken = require('jsonwebtoken')
+import jsonwebtoken from 'jsonwebtoken'
 
 async function Logado (req, res, next){
     //pega os cookies do navegador
@@ -19,4 +19,4 @@ async function Logado (req, res, next){
     }
 }
 
-module.exports = Logado
+export default Logado

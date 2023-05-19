@@ -1,9 +1,8 @@
-const mongoose = require('mongoose');
-const jsonwebtoken = require('jsonwebtoken');
+import jsonwebtoken from 'jsonwebtoken'
 
-const User = require('../../Schemas/User');
+import User from '../../Schemas/User.js'
 
-async function Logar(body){
+async function Logar(body) {
 //recebe os dados do usuario
 const email = boby.email;
 const senha = boby.senha;
@@ -37,4 +36,4 @@ res.sendStatus(200)
 
 }
 
-module.exports = Logar;
+export default Logar;

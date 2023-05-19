@@ -4,4 +4,4 @@ async function Deslogar(res) {
     res.redirect('/')
 }
 
-module.exports = Deslogar
+export default Deslogar
